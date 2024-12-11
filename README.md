@@ -67,10 +67,11 @@ Após uma compreensão da estrutra das tabelas e campos, identificação de rela
 - Ticket Médio; <br>
 - Número de produtos distintos vendidos;<br>
 - Produtos mais vendidos por páis; <br>
-<br>
+<br><br>
 
 <a href="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/SQL/Scripts%20SQL/An%C3%A1lise%20Explorat%C3%B3ria%20Produtos.sql" target="_blank">Clique aqui</a> e acesse o script SQL no GitHub 
-<br><br><br><br>
+
+<br><br><br><br><br>
 
 
 ## Importação dos Dados: Power BI
@@ -103,13 +104,26 @@ Com base nos registros de venda da tabela 'FactInternetSales', foi construída u
 
 Como resultado, foi criada uma tabela contendo uma coluna chamada 'Date', que abrange todas as datas entre a data mínima e a data máxima dos registros de venda. Após gerar a coluna 'Date', foram utilizados os recursos nativos do Power Query para adicionar novas colunas baseadas na data.
 
-
 ## Modelo de Dados
 Após a importação e tratamentos, os relacionamentos entre as tabelas foram realizados no Power BI, replicando o modelo de dados do SQL Server. Chaves primárias e estrangeiras foram revisadas para garantir integridade e funcionalidade nos relatórios. <br>
 
 <img align="centre" width="800"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/modelo%20de%20dados.png">
 
-Com os dados importados e modelados no Power BI, o próximo passo foi a criação de medidas personalizadas com DAX e a construção de visualizações interativas focadas nos objetivos do projeto, como análises de vendas, tendências temporais e desempenho de produtos. <br> <br>
+Com os dados importados e modelados no Power BI, o próximo passo foi a criação de medidas personalizadas com DAX e a construção de visualizações interativas focadas nos objetivos do projeto, como análises de vendas, tendências temporais e desempenho de produtos. 
+
+## Medidas
+Abaixo, uma lista com as principais medidas criadas: <br>
+
+- **Receita Total:** Soma o valor total das vendas ('SalesAmount') na tabela 'FactInternetSales'. Representa a receita gerada pela empresa com base nas vendas realizadas.<br>
+- **Custo Total:** Soma o custo total dos produtos vendidos ('TotalProductCost'). Permite analisar o valor total dos custos associados às vendas realizadas.<br>
+- **Lucro Bruto:** Calcula a diferença entre a receita total e o custo total. Representa o lucro bruto gerado pelas vendas antes de outras deduções, como despesas operacionais e impostos.<br>
+- **Margem Bruta:** Calcula a margem bruta, representada pela razão entre o lucro bruto e a receita total. Essa métrica expressa a lucratividade das vendas como uma porcentagem.<br>
+- **Sales Last Month (LM):** Calcula a receita total para o mês anterior em relação ao mês atual no contexto da data. É usado para análises temporais comparativas.<br>
+- **Sales Year Over Year (YoY):** Calcula a receita total para o mesmo período no ano anterior, permitindo análises comparativas ano a ano (Year Over Year).<br>
+- **Sales Year To Date (YTD):** Calcula a receita acumulada desde o início do ano até a data atual. Fornece uma visão do desempenho no ano corrente.<br>
+- **Sales Year To Date Last Year (YTD LY):** Calcula a receita acumulada no mesmo período do ano anterior. Permite comparações diretas com o desempenho do ano corrente.<br>
+- **Quantidade Total de Produtos:** Soma a quantidade total de produtos vendidos (OrderQuantity). Indica o volume físico de vendas.<br>
+- **Ticket Médio:** Calcula o valor médio por produto vendido, dividindo a receita total pela quantidade total de produtos. É útil para medir o desempenho das vendas em termos de valor por unidade.<br>
 
 ## Construção do Relatório 
 Para proporcionar uma visão detalhada e estratégica do negócio, foram desenvolvidas duas páginas principais de visualização no Power BI: <br>
@@ -118,23 +132,56 @@ Para proporcionar uma visão detalhada e estratégica do negócio, foram desenvo
 
 - **Produtos:** Apresenta uma análise detalhada do desempenho de produtos, subcategorias e categorias, permitindo identificar os itens mais rentáveis e relevantes para a empresa. 
 
+As especificidades de cada página serão descritas em detalhes nas seções a seguir.<br>
 
-As especificidades de cada página serão descritas em detalhes nas seções a seguir.
+## Dashboard 
+A construção do dashboard foi realizada utilizando o Microsoft Power BI, com o design visual desenvolvido no Canva. <br>
 
+O dashboard foi estruturado em duas páginas principais, descritas a seguir:
 
+**1. Geral:** Essa página fornece uma visão abrangente do desempenho financeiro da empresa, destacando os principais indicadores e tendências. <br>
 
----------------------
-O dashboard foi organizado em três páginas:<br>
+Elementos principais:<br>
 
-- **Capa:** Tela introdutória com o tema e alguns indicadores.<br><br>
-- **Análise DRE:** Apresenta a DRE em formato de matriz, permitindo uma visão rápida e direta dos resultados financeiros. Foram incorporados filtros interativos por ano, gráficos dinâmicos (como gráficos de barras e cascata) e KPIs que destacam os principais indicadores de desempenho.<br><br>
-- **Resumo Detalhado:** Apresenta a DRE completa de todos os anos disponíveis, em formato de matriz com a opção de filtrar por mês. Possui a funcionalidade de drill-down, permitindo aos usuários explorar os dados hierarquicamente, do nível de grupo até as contas específicas.
+- Cards com indicadores-chave, como receita, custo e lucro;
+- Gráficos de evolução do faturamento;
+- Comparações temporais (ano anterior e mês anterior);
+- Análises de faturamento por país e por categoria de produto;
+- Identificação dos top 5 clientes com maior faturamento;
+- Cada gráfico de evolução do faturamento possui botões interativos que levam a páginas mais detalhadas, com tabelas e filtros dinâmicos para aprofundamento das análises;
+- Menu lateral para acesso às outras páginas do relatório, com filtros de ano e mês; <br>
+
+<img align="centre" width="800"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/dashboard%20geral.png">
 <br><br>
 
-<img align="center" width="700"  src="https://github.com/vitor-yamada/DRE.PowerBI/blob/main/Imagens/23%20dashboard.png">
-<img align="center" width="700"  src="https://github.com/vitor-yamada/DRE.PowerBI/blob/main/Imagens/24%20dashboard.png">
-<img align="center" width="700"  src="https://github.com/vitor-yamada/DRE.PowerBI/blob/main/Imagens/25%20dashboard.png">
+**2. Produtos:** Página dedicada à análise detalhada do desempenho dos produtos.<br>
+
+Elementos principais:<br>
+
+- Cards com informações de faturamento, custos, lucro e ticket médio;<br>
+- Matriz hierárquica de produtos: Apresenta categorias, subcategorias e produtos;<br>
+- Possui função drill-down para explorar o desempenho de cada produto em detalhes, incluindo quantidade vendida, ticket médio e margem;<br>
+- Mapa de rentabilidade por produto: Visualiza a lucratividade dos produtos;<br>
+- Gráfico de barras: Mostra o número de pedidos por motivo de venda;<br>
+- Gráfico de evolução do faturamento: Apresenta a variação percentual em relação ao mês anterior (inclui a função drill-through que permite acessar uma página detalhada sobre as diferenças de faturamento por subcategoria de produto entre o mês atual e o mês anterior).<br>
+
+<img align="centre" width="800"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/dashboard%20produtos.png">
 <br>
-<a href="https://app.powerbi.com/view?r=eyJrIjoiYjM1N2Q4MzMtMGM4OC00YzUxLWEyYTMtOWMyODgwNTQ3MTUwIiwidCI6IjNlN2FhZjhkLWQyZTAtNGQ3Yy05NWNmLWNjYjhiMTU5ODZlZiJ9&pageName=3a25a87e5ee2f215551d" target="_blank">Clique aqui</a> para acessar o dashboard completo 
+
+## Exemplo de análise detalhada:
+<img align="right" width="700"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/dashboard%20analise%20produtos.png">
 <br>
-<a href="https://github.com/vitor-yamada/DRE.PowerBI/tree/main/Power%20BI" target="_blank">Clique aqui</a> para acessar o arquivo .pbix 
+
+No gráfico de evolução do faturamento, observa-se que em julho de 2023 houve uma queda de 17% no faturamento em relação a junho de 2023. <br>
+
+Usando a função drill-through que nos leva a uma análise detalhada em relação ao faturamento, diferença e variação entre os meses, é possível identificar que essa diferença foi causada principalmente pela redução de vendas de bikes, o que gerou perdas de: <br>
+
+- (-64k) em Touring Bikes;<br>
+- (-81k) em Mountain Bikes;<br>
+- (-123k) em Road Bikes.<br>
+
+Isso resultou em um total de (-267k) de faturamento, explicando a queda de 17% entre os dois meses. Portanto, através desta página de análise, é possível identificar as principais categorias e subcategorias que funcionaram como alavancas para o aumento ou queda do faturamento entre um mes e outro. <br>
+
+<a href="https://app.powerbi.com/view?r=eyJrIjoiYTJlNzg4M2EtN2E4YS00OTBjLWFjYTEtMjE1MmFmZjdiZWNjIiwidCI6IjNlN2FhZjhkLWQyZTAtNGQ3Yy05NWNmLWNjYjhiMTU5ODZlZiJ9" target="_blank">Clique aqui</a> para acessar o dashboard completo 
+<br>
+<a href="https://github.com/vitor-yamada/AdventureWorksPortifolio/tree/main/PowerBI" target="_blank">Clique aqui</a> para acessar o arquivo .pbix 
