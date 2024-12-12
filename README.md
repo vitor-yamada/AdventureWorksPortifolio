@@ -115,14 +115,23 @@ Com os dados importados e modelados no Power BI, o próximo passo foi a criaçã
 Abaixo, uma lista com as principais medidas criadas: <br>
 
 - **Receita Total:** Soma o valor total das vendas ('SalesAmount') na tabela 'FactInternetSales'. Representa a receita gerada pela empresa com base nas vendas realizadas.<br>
+
 - **Custo Total:** Soma o custo total dos produtos vendidos ('TotalProductCost'). Permite analisar o valor total dos custos associados às vendas realizadas.<br>
+
 - **Lucro Bruto:** Calcula a diferença entre a receita total e o custo total. Representa o lucro bruto gerado pelas vendas antes de outras deduções, como despesas operacionais e impostos.<br>
+
 - **Margem Bruta:** Calcula a margem bruta, representada pela razão entre o lucro bruto e a receita total. Essa métrica expressa a lucratividade das vendas como uma porcentagem.<br>
+
 - **Sales Last Month (LM):** Calcula a receita total para o mês anterior em relação ao mês atual no contexto da data. É usado para análises temporais comparativas.<br>
+
 - **Sales Year Over Year (YoY):** Calcula a receita total para o mesmo período no ano anterior, permitindo análises comparativas ano a ano (Year Over Year).<br>
+
 - **Sales Year To Date (YTD):** Calcula a receita acumulada desde o início do ano até a data atual. Fornece uma visão do desempenho no ano corrente.<br>
+
 - **Sales Year To Date Last Year (YTD LY):** Calcula a receita acumulada no mesmo período do ano anterior. Permite comparações diretas com o desempenho do ano corrente.<br>
+
 - **Quantidade Total de Produtos:** Soma a quantidade total de produtos vendidos (OrderQuantity). Indica o volume físico de vendas.<br>
+
 - **Ticket Médio:** Calcula o valor médio por produto vendido, dividindo a receita total pela quantidade total de produtos. É útil para medir o desempenho das vendas em termos de valor por unidade.<br>
 
 ## Construção do Relatório 
@@ -147,7 +156,6 @@ Elementos principais:<br>
 - Gráficos de evolução do faturamento;
 - Comparações temporais (ano anterior e mês anterior);
 - Análises de faturamento por país e por categoria de produto;
-- Identificação dos top 5 clientes com maior faturamento;
 - Cada gráfico de evolução do faturamento possui botões interativos que levam a páginas mais detalhadas, com tabelas e filtros dinâmicos para aprofundamento das análises;
 - Menu lateral para acesso às outras páginas do relatório, com filtros de ano e mês; <br>
 
