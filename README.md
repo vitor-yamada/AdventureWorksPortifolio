@@ -160,7 +160,7 @@ Elementos principais:<br>
 - Menu lateral para acesso às outras páginas do relatório, com filtros de ano e mês; <br>
 
 <img align="centre" width="800"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/dashboard%20geral.png">
-<br><br>
+<br>
 
 **2. Produtos:** Página dedicada à análise detalhada do desempenho dos produtos.<br>
 
