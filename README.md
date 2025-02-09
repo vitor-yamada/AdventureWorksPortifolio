@@ -177,7 +177,7 @@ Elementos principais:<br>
 <br>
 
 ## Exemplo de análise detalhada:
-<img align="right" width="700"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/dashboard%20analise%20produtos.png">
+<img align="right" width="600"  src="https://github.com/vitor-yamada/AdventureWorksPortifolio/blob/main/Imagens/dashboard%20analise%20produtos.png">
 <br>
 
 No gráfico de evolução do faturamento, observa-se que em julho de 2023 houve uma queda de 17% no faturamento em relação a junho de 2023. <br>
